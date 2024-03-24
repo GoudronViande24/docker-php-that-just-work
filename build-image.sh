@@ -1,0 +1,1 @@
+docker buildx build --push -t goudronviande24/php:latest --platform linux/amd64,linux/arm64 .

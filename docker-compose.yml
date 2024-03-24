@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  web:
+    build: .
+    ports:
+      - "12345:80"
+    volumes:
+      - ./www:/var/www/html
+    restart: unless-stopped
+
+  db:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db
+      MYSQL_USER: db
+      MYSQL_PASSWORD: db
+#    ports:
+#      - "12346:3306"
+#    volumes:
+#      - ./db:/var/lib/mysql
+    restart: unless-stopped
